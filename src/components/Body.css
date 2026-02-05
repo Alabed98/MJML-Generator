@@ -1,0 +1,151 @@
+.bodyCont{
+    display: flex;
+    justify-content: center;
+    background-color: #eef5ff;
+    box-sizing: border-box;
+    width: 100%;    
+}
+
+.container{
+    max-width: 900px; 
+    width: 100%;
+    margin: 40px 0;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.uploadArea{
+    background-color: #eef2ff;
+    border: 2px dashed #a5b4fc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 30px 0;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+p{
+    color:#4b5565
+}
+
+.btn{
+    color:white;
+    width: 100%;
+    padding:10px;
+    font-size:18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    margin:20px 0;
+    margin-top:10px;
+    background-color: #4f46e5;
+}
+
+.btnEdit{
+    background-color: #f3f4f6;
+    color:#374166;
+    font-weight: normal;
+}
+
+.rules{
+    background-color: #eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius: 10px;
+    margin:20px 0;
+    padding:10px 30px;
+    color:#1e40af;
+}
+
+ul li{
+    padding:7px 0;
+    font-size: 17px;
+}
+
+textarea{
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #111827;
+    color:#4ade80;
+    padding:10px;
+    margin: 10px 0;
+    border: 1px solid #e5e7eb;
+    height: 400px;
+    font-size: 16px;
+    max-width:900px
+}
+
+.wordContent{
+    box-sizing: border-box;
+    background-color: #f9fafb;
+    color:black;
+    height: 200px;
+}
+
+.resHeader{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.btnCopy{
+    background-color: #16a34a;
+    color:white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border:none;
+    font-size: 14px; 
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnCopy:hover{
+    background-color: #0f6f32;
+}
+
+.alert{
+    position: absolute;
+    bottom: 0;
+    right:40%;
+    color:white;
+    text-align: center;
+    padding:20px;
+    border-radius: 5px;
+    background-color: #0f6f32;
+    width: 20%;
+}
+
+select{
+    padding: 10px;
+    background-color: #eef2ff;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid #a5b4fc;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.inputLink{
+    border: 1px solid #a5b4fc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.options{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
