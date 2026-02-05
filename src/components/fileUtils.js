@@ -15,10 +15,11 @@ export async function HandleFileUpload(event, drop = false) {
   }
 
   const arrayBuffer = file.arrayBuffer();
+  const fileWord = await mammoth.extractRawText({arrayBuffer});
   const fileString = await mammoth.convertToHtml({ arrayBuffer })
 
   const fileContent = fileString.value.replace(/src=["]data:image\/[^;]+;base64,[^"']*["]/gi, 'src="BILD_PLATZHALTER"').replace(/alt=["'][^"']*["']/gi, 'alt="Bild"')
-  return { fileContent: fileContent, fileName: file.name };
+  return { fileContentASHTML: fileContent,fileContentASWord:fileWord.value, fileName: file.name };
 }
 
 export async function APIReq(file, template, recievedLink) {
@@ -50,7 +51,6 @@ export async function APIReq(file, template, recievedLink) {
   );
 
   const data = await response.json();
-  console.log(data.candidates[0].content.parts[0].text);
 
   try {
     return data.candidates[0].content.parts[0].text

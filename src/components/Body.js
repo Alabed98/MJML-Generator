@@ -9,6 +9,7 @@ function Body() {
 //const [error, setError] = useState('');
 const [fileName, setFileName] =useState('');
 const [wordOutput, setWordOutput] = useState('');
+const [htmlOutpu, setHtmlOutput] = useState('');
 const [mjmlOutput, setMjmlOutput] = useState('');
 const [btnText,setBtnText] = useState(<><i className={"fa-solid fa-arrows-rotate fa-xl"}></i> Word zu MJML konvertieren</>)
 const [showAlert, setShowAlert] =useState(false);
@@ -71,7 +72,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
             
             </div>
 
-            <button className={'btn'} style={{padding:'15px 10px',borderRadius:'5px'}} onClick={() => ConvertWordToMjml(wordOutput, recievedLink)}>
+            <button className={'btn'} style={{padding:'15px 10px',borderRadius:'5px'}} onClick={() => ConvertWordToMjml(htmlOutpu, recievedLink)}>
                 {btnText}
             </button>
         </>
@@ -148,7 +149,8 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
         }
         else{
             setFileName(wordFile.fileName)
-            setWordOutput(wordFile.fileContent)
+            setWordOutput(wordFile.fileContentASWord)
+            setHtmlOutput(wordFile.fileContentASHTML)
             setBtnText(<><i className={"fa-solid fa-arrows-rotate fa-xl"}></i> Word zu MJML konvertieren</>)
             setMjmlOutput('')
 
