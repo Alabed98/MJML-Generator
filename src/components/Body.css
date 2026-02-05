@@ -7,7 +7,7 @@
 }
 
 .container{
-    max-width: 900px; 
+    max-width: 750px; 
     width: 100%;
     margin: 40px 0;
     background-color: white;
@@ -44,7 +44,7 @@ p{
     color:white;
     width: 100%;
     padding:10px;
-    font-size:18px;
+    font-size:15px;
     font-weight: 600;
     border-radius: 5px;
     border:none;
@@ -71,7 +71,7 @@ p{
 
 ul li{
     padding:7px 0;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 textarea{
@@ -84,7 +84,7 @@ textarea{
     margin: 10px 0;
     border: 1px solid #e5e7eb;
     height: 400px;
-    font-size: 16px;
+    font-size: 15px;
     max-width:900px
 }
 

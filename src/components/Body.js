@@ -31,10 +31,10 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
                     <i className={"fa-solid fa-file-word blue fa-2xl"}></i>
                 </div>
                 <div>
-                    <h1 style={{ paddingLeft: '10px', margin: '8px 0' }}><span >Word zu MJML Konverter</span></h1>
+                    <h1 style={{ paddingLeft: '10px', margin: '8px 0', fontSize:'25px' }}><span >Word zu MJML Konverter</span></h1>
                 </div>
             </div>
-            <p style={{ margin: '0', fontSize: '19px' }}>Laden Sie Ihre Word-Datei hoch und konvertieren Sie sie automatisch in ein MJML Email-Template</p>
+            <p style={{ margin: '0', fontSize: '17px' }}>Laden Sie Ihre Word-Datei hoch und konvertieren Sie sie automatisch in ein MJML Email-Template</p>
         </>
     }
 
@@ -46,7 +46,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
             <input id="inputFile" type='file' name='inputFile' style={{display:'none'}} onChange={(event) => handleOnChange(event)}/>
             <div className={'uploadArea'} onDrop={(e)=>dropHandler(e)} onDragOver={(e) => dragoverHandler(e)}>
                     <div style={{ textAlign: 'center' }}>
-                        <i className={"fa-solid fa-arrow-up-from-bracket blue"} style={{ fontSize: '40px' }}></i>
+                        <i className={"fa-solid fa-arrow-up-from-bracket blue"} style={{ fontSize: '30px' }}></i>
                         <div>
                             <p style={{ marginBottom: '0' }}><b>Klicken zum Hochladen</b> oder Drag & Drop </p>
                             <p style={{ margin: '10px 0' }}>Word-Datei (.docx)</p>
@@ -80,7 +80,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
     function RulesArea() {
         return <>
             <div className={'rules'}>
-                <p style={{ fontSize: '20px', fontWeight: '600', color: '#1e3a8a' }}>Befolgte Regeln:</p>
+                <p style={{ fontSize: '17px', fontWeight: '600', color: '#1e3a8a' }}>Befolgte Regeln:</p>
                 <ul className={'fa-ul'}>
                     <li><i className={"fa-solid fa-circle-check fa-li fa-lg"}></i>Keine DIVs - nur MJML-Komponenten</li>
 
@@ -158,7 +158,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
     function WordContent(){
         return <>
             {wordOutput && (<div>
-                <h1>Word-Inhalt erkannt:</h1>
+                <h2>Word-Inhalt erkannt:</h2>
                 <textarea className='wordContent' 
                 value={wordOutput}
                 readOnly
