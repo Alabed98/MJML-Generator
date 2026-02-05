@@ -140,7 +140,7 @@ AUSGABE:
 - Beginne direkt mit <mjml> und ende mit </mjml>
 - Verwende die Templates EXAKT wie vorgegeben
 - Ersetze KEINE Platzhalter in geschweiften Klammern {}`;
-  console.log(systemPrompt)
+
   return systemPrompt;
 }
 
