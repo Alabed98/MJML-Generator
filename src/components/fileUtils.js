@@ -1,7 +1,6 @@
 
 import mammoth from "mammoth";
 import Rules from "./KIRules";
-import { GoogleGenAI } from "@google/genai";
 
 export async function HandleFileUpload(event, drop=false){
     
@@ -47,7 +46,7 @@ export async function APIReq(file, template, recievedLink){
       })
         */
 
-if(template=='Advance'){
+if(template === 'Advance'){
     recievedLink = '{landingpageUrl}'
 }
 const response = await fetch(

@@ -6,7 +6,7 @@ import {HandleFileUpload, APIReq} from './fileUtils.js';
 
 
 function Body() {
-const [error, setError] = useState('');
+//const [error, setError] = useState('');
 const [fileName, setFileName] =useState('');
 const [wordOutput, setWordOutput] = useState('');
 const [mjmlOutput, setMjmlOutput] = useState('');
@@ -106,8 +106,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
         </>
     }
 
-    function KI_Result(){
-        
+    function KIResult(){
         return <>
         {mjmlOutput && ( 
             <>  
@@ -125,7 +124,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
                 onChange={(e)=> e.target.value} 
                 />
             </>)}
-        
+           
         </>
     }
 
@@ -145,7 +144,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
         const wordFile = await HandleFileUpload(event);
         
         if(wordFile.error){
-            setError(wordFile.error)
+            //setError(wordFile.error)
         }
         else{
             setFileName(wordFile.fileName)
@@ -206,7 +205,7 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
                     <UploadArea />
                     <WordContent />
                     <Alert />
-                    <KI_Result />
+                    <KIResult />
                     <RulesArea />
                 </div>
             </div>
