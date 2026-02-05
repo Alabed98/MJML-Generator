@@ -23,7 +23,7 @@ export async function HandleFileUpload(event, drop = false) {
 
 export async function APIReq(file, template, recievedLink) {
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.REACT_APP_GEMINI_KEY;
 
   if (template === 'Advance') {
     recievedLink = '{landingpageUrl}'
