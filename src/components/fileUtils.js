@@ -26,8 +26,20 @@ export async function APIReq(file, template, recievedLink) {
 
   const apiKey = process.env.REACT_APP_GEMINI_KEY;
 
-  if (template === 'Advance') {
+  if (template === 'Advance' || template === 'HU_Mailings') {
     recievedLink = '{landingpageUrl}'
+  }
+  if(
+    template === 'Reminder_Reg_Inv' || 
+    template === 'Reminder_Reg_GeV' ||
+    template === 'Investor_Webinar' ||
+    template === 'Gevestor_Webinar' ||
+    template === 'Nachfass_Inv' ||
+    template === 'Nachfass_GeV' ||
+    template === 'Abo_laufend_Inv' ||
+    template === 'Abo_laufen_GeV' 
+  ){
+    recievedLink = '{Live_Room_Link}';
   }
   const response = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,

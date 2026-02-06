@@ -63,11 +63,20 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
                 <select value={selectedTemplate} onChange={(e) => setSelectedTemplate(e.target.value)}>
                     <option value={'Investor'}>Investor</option>
                     <option value={'Gevestor'}>Gevestor</option>
-                    <option value={'maxLQ'}>maxLQ</option>
-                    <option value={'Webinar Inv'}>Webinar Inv</option>
-                    <option value={'Webinar Gev'}>Webinar Gev</option>
                     <option value={'Advance'}>Advance</option>
-                    <option value={'Greek'}>Greek</option>
+                    <option value={'maxLQ'}>maxLQ</option>
+                    <option value={'maxLQ_Magdalena'}>maxLQ Magdalena</option>
+                    <option value={'Investor_Webinar'}>Webinar Inv</option>
+                    <option value={'Gevestor_Webinar'}>Webinar GeV</option>
+
+                    <option value={'Reminder_Reg_Inv'}>Reminder u. Reg Inv</option>
+                    <option value={'Reminder_Reg_GeV'}>Reminder u. Reg GeV</option>
+                    <option value={'Nachfass_Inv'}>Nachfass Inv</option>
+                    <option value={'Nachfass_GeV'}>Nachfass GeV</option>
+                    <option value={'HU_Mailings'}>HU Mailings</option>
+                    <option value={'Abo_laufend_Inv'}>Abo laufend Inv</option>
+                    <option value={'Abo_laufen_GeV'}>Abo laufen GeV</option>
+
                 </select>
             
             </div>
