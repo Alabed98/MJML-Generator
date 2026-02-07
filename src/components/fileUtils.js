@@ -15,11 +15,11 @@ export async function HandleFileUpload(event, drop = false) {
   }
 
   const arrayBuffer = file.arrayBuffer();
-  const fileWord = await mammoth.extractRawText({arrayBuffer});
+  const fileWord = await mammoth.extractRawText({ arrayBuffer });
   const fileString = await mammoth.convertToHtml({ arrayBuffer })
-
   const fileContent = fileString.value.replace(/src=["]data:image\/[^;]+;base64,[^"']*["]/gi, 'src="BILD_PLATZHALTER"').replace(/alt=["'][^"']*["']/gi, 'alt="Bild"')
-  return { fileContentASHTML: fileContent,fileContentASWord:fileWord.value, fileName: file.name };
+  
+  return { fileContentASHTML: fileContent, fileContentASWord: fileWord.value, fileName: file.name };
 }
 
 export async function APIReq(file, template, recievedLink) {
@@ -29,16 +29,16 @@ export async function APIReq(file, template, recievedLink) {
   if (template === 'Advance' || template === 'HU_Mailings') {
     recievedLink = '{landingpageUrl}'
   }
-  if(
-    template === 'Reminder_Reg_Inv' || 
+  if (
+    template === 'Reminder_Reg_Inv' ||
     template === 'Reminder_Reg_GeV' ||
     template === 'Investor_Webinar' ||
     template === 'Gevestor_Webinar' ||
     template === 'Nachfass_Inv' ||
     template === 'Nachfass_GeV' ||
     template === 'Abo_laufend_Inv' ||
-    template === 'Abo_laufen_GeV' 
-  ){
+    template === 'Abo_laufen_GeV'
+  ) {
     recievedLink = '{Live_Room_Link}';
   }
   const response = await fetch(

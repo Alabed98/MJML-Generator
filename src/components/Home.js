@@ -1,38 +1,29 @@
 
 import { useState } from 'react';
-import './Body.css';
-import {HandleFileUpload, APIReq} from './fileUtils.js';
+import './Home.css';
+import { HandleFileUpload, APIReq } from './fileUtils.js';
 
 
 
-function Body() {
-//const [error, setError] = useState('');
-const [fileName, setFileName] =useState('');
-const [wordOutput, setWordOutput] = useState('');
-const [htmlOutpu, setHtmlOutput] = useState('');
-const [mjmlOutput, setMjmlOutput] = useState('');
-const [btnText,setBtnText] = useState(<><i className={"fa-solid fa-arrows-rotate fa-xl"}></i> Word zu MJML konvertieren</>)
-const [showAlert, setShowAlert] =useState(false);
-const [selectedTemplate, setSelectedTemplate]=useState('Advance')
+function Home() {
+    //const [error, setError] = useState('');
+    const [fileName, setFileName] = useState('');
+    const [wordOutput, setWordOutput] = useState('');
+    const [htmlOutpu, setHtmlOutput] = useState('');
+    const [mjmlOutput, setMjmlOutput] = useState('');
+    const [btnText, setBtnText] = useState(<><i className={"fa-solid fa-arrows-rotate fa-xl"}></i> Word zu MJML konvertieren</>)
+    const [showAlert, setShowAlert] = useState(false);
+    const [selectedTemplate, setSelectedTemplate] = useState('Advance')
+   
 
     function Header() {
         return <>
-
-            <div style={{display:'flex', borderBottom:'1px solid #e0e4e9', marginBottom:20}}>
-                <div style={{margin:'0 10px'}}>
-                    <button className={'btn'}><i className={"fa-solid fa-house"}></i> Konverter</button>
-                </div>
-                <div style={{margin:'0 10px'}}>
-                    <button className={'btn btnEdit'}><i className={"fa-solid fa-gear"}></i> Prompt-Einstellungen</button>
-                </div>
-            </div>
-
             <div className={'header'}>
                 <div>
                     <i className={"fa-solid fa-file-word blue fa-2xl"}></i>
                 </div>
                 <div>
-                    <h1 style={{ paddingLeft: '10px', margin: '8px 0', fontSize:'25px' }}><span >Word zu MJML Konverter</span></h1>
+                    <h1 style={{ paddingLeft: '10px', margin: '8px 0', fontSize: '25px' }}><span >Word zu MJML Konverter</span></h1>
                 </div>
             </div>
             <p style={{ margin: '0', fontSize: '17px' }}>Laden Sie Ihre Word-Datei hoch und konvertieren Sie sie automatisch in ein MJML Email-Template</p>
@@ -44,22 +35,22 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
 
         return <>
             <label htmlFor='inputFile'>
-            <input id="inputFile" type='file' name='inputFile' style={{display:'none'}} onChange={(event) => handleOnChange(event)}/>
-            <div className={'uploadArea'} onDrop={(e)=>dropHandler(e)} onDragOver={(e) => dragoverHandler(e)}>
+                <input id="inputFile" type='file' name='inputFile' style={{ display: 'none' }} onChange={(event) => handleOnChange(event)} />
+                <div className={'uploadArea'} onDrop={(e) => dropHandler(e)} onDragOver={(e) => dragoverHandler(e)}>
                     <div style={{ textAlign: 'center' }}>
                         <i className={"fa-solid fa-arrow-up-from-bracket blue"} style={{ fontSize: '30px' }}></i>
                         <div>
                             <p style={{ marginBottom: '0' }}><b>Klicken zum Hochladen</b> oder Drag & Drop </p>
                             <p style={{ margin: '10px 0' }}>Word-Datei (.docx)</p>
-                            {fileName && <p><i className={"fa-solid fa-circle-check fa-lg blue"}/> {fileName}</p>}
+                            {fileName && <p><i className={"fa-solid fa-circle-check fa-lg blue"} /> {fileName}</p>}
                         </div>
                     </div>
                 </div>
             </label>
 
-        <div className={'options'}>
-                <input value={recievedLink} className={'inputLink'} type='text' placeholder='Link einfügen' onChange={(e) =>  setRecievedLink(e.target.value)}></input>
-                                
+            <div className={'options'}>
+                <input value={recievedLink} className={'inputLink'} type='text' placeholder='Link einfügen' onChange={(e) => setRecievedLink(e.target.value)}></input>
+
                 <select value={selectedTemplate} onChange={(e) => setSelectedTemplate(e.target.value)}>
                     <option value={'Investor'}>Investor</option>
                     <option value={'Gevestor'}>Gevestor</option>
@@ -78,10 +69,10 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
                     <option value={'Abo_laufen_GeV'}>Abo laufen GeV</option>
 
                 </select>
-            
+
             </div>
 
-            <button className={'btn'} style={{padding:'15px 10px',borderRadius:'5px'}} onClick={() => ConvertWordToMjml(htmlOutpu, recievedLink)}>
+            <button className={'btn'} style={{ padding: '15px 10px', borderRadius: '5px' }} onClick={() => ConvertWordToMjml(htmlOutpu, recievedLink)}>
                 {btnText}
             </button>
         </>
@@ -116,47 +107,47 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
         </>
     }
 
-    function KIResult(){
+    function KIResult() {
         return <>
-        {mjmlOutput && ( 
-            <>  
-                <div className={'resHeader'}>
-                    <div>
-                        <h2>Generierter MJML Code:</h2>
-                    </div>
+            {mjmlOutput && (
+                <>
+                    <div className={'resHeader'}>
+                        <div>
+                            <h2>Generierter MJML Code:</h2>
+                        </div>
 
-                    <div style={{display:'flex',justifyContent:'end'}}>
-                        <button className={'btnCopy'} onClick={MJMLKopieren}>MJML kopieren</button> 
+                        <div style={{ display: 'flex', justifyContent: 'end' }}>
+                            <button className={'btnCopy'} onClick={MJMLKopieren}>MJML kopieren</button>
+                        </div>
                     </div>
+                    <textarea
+                        value={mjmlOutput}
+                        onChange={(e) => e.target.value}
+                    />
+                </>)}
+
+        </>
+    }
+
+    function Alert() {
+        return <>
+            {showAlert && (
+                <div className={'alert'} id='alert'>
+                    <div style={{ position: 'relative' }}>MJML kopiert</div>
                 </div>
-                <textarea 
-                value={mjmlOutput}
-                onChange={(e)=> e.target.value} 
-                />
-            </>)}
-           
+            )}
         </>
     }
 
-    function Alert(){
-        return <>
-        {showAlert && (        
-            <div className={'alert'} id='alert'>
-                <div style={{position:'relative'}}>MJML kopiert</div>
-            </div>
-        )} 
-        </>
-    }
-
-    async function handleOnChange(event){
+    async function handleOnChange(event) {
         setSelectedTemplate('Advance')
 
         const wordFile = await HandleFileUpload(event);
         
-        if(wordFile.error){
+        if (wordFile.error) {
             //setError(wordFile.error)
         }
-        else{
+        else {
             setFileName(wordFile.fileName)
             setWordOutput(wordFile.fileContentASWord)
             setHtmlOutput(wordFile.fileContentASHTML)
@@ -166,29 +157,29 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
         }
     }
 
-    function WordContent(){
+    function WordContent() {
         return <>
             {wordOutput && (<div>
                 <h2>Word-Inhalt erkannt:</h2>
-                <textarea className='wordContent' 
-                value={wordOutput}
-                readOnly
+                <textarea className='wordContent'
+                    value={wordOutput}
+                    readOnly
                 >
 
                 </textarea>
 
             </div>)
-    }
+            }
         </>
     }
 
-    async function ConvertWordToMjml(content, recievedLink){
+    async function ConvertWordToMjml(content, recievedLink) {
         setBtnText(<><i className={"fa-solid fa-arrows-rotate fa-spin"}></i> Konvertiere...</>)
         setMjmlOutput(await APIReq(content, selectedTemplate, recievedLink))
         setBtnText(<><i className={"fa-regular fa-circle-check fa-xl"}></i> MJML fertig</>)
     }
 
-    function MJMLKopieren(){
+    function MJMLKopieren() {
         navigator.clipboard.writeText(mjmlOutput);
         setShowAlert(true)
         setTimeout(() => {
@@ -196,18 +187,20 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
         }, 1000);
     }
 
-    function dragoverHandler(event){
+    function dragoverHandler(event) {
         event.preventDefault();
     }
 
-    async function dropHandler(event){
+    async function dropHandler(event) {
         event.preventDefault();
         const wordFile = await HandleFileUpload(event, true)
         setFileName(wordFile.fileName);
-        setWordOutput(wordFile.fileContent)
+        setWordOutput(wordFile.fileContentASWord)
+        setHtmlOutput(wordFile.fileContentASHTML)
+
     }
-    
-    
+
+
     return <>
         <div className={'bodyCont'}>
             <div className={'container'}>
@@ -223,4 +216,4 @@ const [selectedTemplate, setSelectedTemplate]=useState('Advance')
         </div>
     </>
 }
-export default Body;
+export default Home;

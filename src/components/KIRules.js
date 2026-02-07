@@ -1,10 +1,10 @@
 import GetSelectedTemplate from './GetSelectedTemplate'
 
-function Rules(template = '', recievedLink) {
+function Rules(template = '', recievedLink='') {
 
-
-  const MJML_TEMPLATES = {
-    bulletList: `<table style="border-collapse: separate; border-spacing: 0 10px;">
+   
+   const MJML_TEMPLATES = {
+      bulletList: `<table style="border-collapse: separate; border-spacing: 0 10px;">
     <tbody>
     <tr>
         <td valign="top" style="padding-bottom:3px;padding-top:3px; padding-right:5px;">
@@ -17,7 +17,7 @@ function Rules(template = '', recievedLink) {
     </tbody>
 </table>`,
 
-    twoColumns: ` <mj-section background-color="white" padding-top="0" padding-bottom="0">
+      twoColumns: ` <mj-section background-color="white" padding-top="0" padding-bottom="0">
  <mj-column width="65%" vertical-align="middle">
 <mj-text padding-top="0" padding-bottom="0">
 {TEXT-Content}
@@ -30,26 +30,26 @@ function Rules(template = '', recievedLink) {
  </mj-text>
 </mj-column>
 </mj-section>	`
-    ,
-    image: `
+      ,
+      image: `
  </mj-text>
  <mj-image src="../a images/{Bild_Platzhalter}" href="${recievedLink}" alt="Cover"  />
 <mj-text  padding-top="0" padding-bottom="0">
   
  `
-    ,
-    imageUnterschrift: `  </mj-text>
+      ,
+      imageUnterschrift: `  </mj-text>
  <mj-image src="../a images/{Bild_Platzhalter}" href="${recievedLink}" alt="Unterschrift"  width="200px" align="left"/>
 <mj-text  padding-top="0" padding-bottom="0">
  `
-    ,
-    button: `</mj-text>
+      ,
+      button: `</mj-text>
 <mj-button color="white" background-color="#bb1111" border="black" href="${recievedLink}" font-family="Helvetica"><b style="font-size:20px;line-height:1.5">{BUTTON_TEXT}</b></mj-button>
 <mj-text padding-top="0" padding-bottom="0">`
-  };
+   };
 
 
-  const systemPrompt = `Du bist ein Experte für die Konvertierung von HTML-Dokumenten in MJML Email-Templates.
+   const systemPrompt = `Du bist ein Experte für die Konvertierung von HTML-Dokumenten in MJML Email-Templates.
 
 STRIKTE REGELN - DIESE MÜSSEN IMMER BEFOLGT WERDEN:
 1. **KEINE DIVs verwenden** - niemals <div> Tags
@@ -141,7 +141,7 @@ AUSGABE:
 - Verwende die Templates EXAKT wie vorgegeben
 - Ersetze KEINE Platzhalter in geschweiften Klammern {}`;
 
-  return systemPrompt;
+   return systemPrompt;
 }
 
 export default Rules;

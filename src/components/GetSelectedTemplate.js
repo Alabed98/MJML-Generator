@@ -1,8 +1,8 @@
 
-function GetSelectedTemplate(selectedTemplate){
+function GetSelectedTemplate(selectedTemplate) {
 
-    const templates={
-  Investor:`<mjml>
+  const templates = {
+    Investor: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -38,7 +38,7 @@ function GetSelectedTemplate(selectedTemplate){
   
   </mjml>`,
 
-  Gevestor:`<mjml>
+    Gevestor: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -74,7 +74,7 @@ function GetSelectedTemplate(selectedTemplate){
   
   </mjml>`,
 
-  Advance:`
+    Advance: `
    <mjml>
   	<mj-head>
     	<mj-attributes>
@@ -136,7 +136,7 @@ HIER kommt der Inhalt
   
   </mjml>
   `,
-  maxLQ:`<mjml>
+    maxLQ: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -171,8 +171,8 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`
-  ,
-  maxLQ_Magdalena:`<mjml>
+    ,
+    maxLQ_Magdalena: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -208,7 +208,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`,
-  Investor_Webinar:`<mjml>
+    Investor_Webinar: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -262,7 +262,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`,
-  Gevestor_Webinar:`<mjml>
+    Gevestor_Webinar: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -325,7 +325,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`  ,
-  Reminder_Reg_Inv:`<mjml>
+    Reminder_Reg_Inv: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -380,7 +380,7 @@ HIER kommt der Inhalt
   
   </mjml>`,
 
-  Reminder_Reg_GeV:`<mjml>
+    Reminder_Reg_GeV: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -443,7 +443,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`,
-  Nachfass_Inv:`<mjml>
+    Nachfass_Inv: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -497,7 +497,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`,
-  Nachfass_GeV:`<mjml>
+    Nachfass_GeV: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -560,7 +560,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`,
-  HU_Mailings:`
+    HU_Mailings: `
    <mjml>
   	<mj-head>
     	<mj-attributes>
@@ -621,7 +621,7 @@ HIER kommt der Inhalt
   
   </mjml>
   `,
-  Abo_laufend_Inv:`<mjml>
+    Abo_laufend_Inv: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -676,7 +676,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`,
-  Abo_laufen_GeV:`<mjml>
+    Abo_laufen_GeV: `<mjml>
   	<mj-head>
       
     	<mj-attributes>
@@ -739,7 +739,7 @@ HIER kommt der Inhalt
     </mj-body>
   
   </mjml>`
-    }
-    return templates[selectedTemplate];
+  }
+  return templates[selectedTemplate];
 }
 export default GetSelectedTemplate;
