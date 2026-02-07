@@ -16,8 +16,6 @@ function PromptsEdit() {
 function EditBox() {
     const prompt = Prompt()
     const MJML_Snippets = Code_Snippets()
-    const array = Object.entries(MJML_Snippets)
-    console.log(array)
     return (<>
         <div className={'editHeader'}>
             <div className='editBox'>

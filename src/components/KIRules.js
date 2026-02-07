@@ -181,7 +181,7 @@ function Rules(template = '', recievedLink = '') {
     - Verwende die Templates EXAKT wie vorgegeben
     - Ersetze KEINE Platzhalter in geschweiften Klammern {}`;
    
-
+      console.log(systemPrompt)
       return getPrompt()
 }
 
