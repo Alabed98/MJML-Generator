@@ -91,10 +91,11 @@ ABSOLUT VERBINDLICHE REGELN
 11. **MJML_Template.twoColumns ist zwingend zu verwenden,
       wenn ein <img> innerhalb eines <p>- oder <li>-Tags vorkommt.
 
-12. **Mehrere aufeinanderfolgende <p>-Tags dürfen NICHT aufgeteilt werden
-      – Zwischen ihnen darf kein mj-text geschlossen und neu geöffnet werden.
+12. **Sobald ein <p>-Tag erzeugt wurde, DARF mj-text NICHT geschlossen werden, solange unmittelbar danach weitere <p>-Tags folgen. Mehrere <p>-Tags hintereinander MÜSSEN immer innerhalb EINES EINZIGEN mj-text-Tags stehen.
 
-13. **Bilder oder Buttons, die vor, nach oder zwischen zusammengehörenden <p>-Tags stehen, dürfen die bestehende mj-columns- bzw. mj-section-Struktur NICHT unterbrechen. Verwende dafür ausschließlich die vorgesehenen MJML-Snippets.
+13. **Wenn Bilder oder Buttons oberhalb oder unterhalb dargestellt werden, DARF KEINE neue mj-section und KEINE neue mj-columns geöffnet werden. Verwende dafür ausschließlich die vorgesehenen MJML-Snippets.
+
+14. **Wenn ein Bild oder Button NEBEN Text dargestellt werden soll (zweispaltiges Layout), MUSS eine neue mj-section mit mj-columns erzeugt werden. In diesem Fall ist verpflichtend das MJML_Template.twoColumns zu verwenden.
 
 VERFÜGBARE MJML-TEMPLATES:
 
