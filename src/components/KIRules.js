@@ -59,7 +59,7 @@ function Rules(template = '', recievedLink = '') {
       };
 
 
-      /* const systemPrompt = `Du bist ein Experte für die Konvertierung von HTML-Dokumenten in MJML Email-Templates.
+       const systemPrompt = `Du bist ein Experte für die Konvertierung von HTML-Dokumenten in MJML Email-Templates.
     
     STRIKTE REGELN - DIESE MÜSSEN IMMER BEFOLGT WERDEN: 
     ABSOLUT VERBINDLICHE REGELN
@@ -180,13 +180,13 @@ function Rules(template = '', recievedLink = '') {
     - Beginne direkt mit <mjml> und ende mit </mjml>
     - Verwende die Templates EXAKT wie vorgegeben
     - Ersetze KEINE Platzhalter in geschweiften Klammern {}`;
-    */
+   
 
 
-      let systemPrompt = '';
+      /*let systemPrompt = '';
       fetch('https://be-mailgenerator.vercel.app/api/prompt')
       .then(res=>dataJson = res.json)
-      .then(data => systemPrompt = data)
+      .then(data => systemPrompt = data) */
       return systemPrompt
 }
 
