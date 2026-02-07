@@ -43,7 +43,10 @@ function EditBox() {
                 </div>
             </div>
 
-            <textarea className='textArea' value={MJML_Snippets.image}> </textarea>
+            {Object.keys(MJML_Snippets).map((key)=>{
+                return <textarea className='textArea textAreaSnippet' value={key + ':\n\n' +MJML_Snippets[key]}> </textarea>
+            })}
+      
         </div>
     </>)
 }

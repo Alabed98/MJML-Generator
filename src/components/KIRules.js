@@ -67,8 +67,9 @@ ABSOLUT VERBINDLICHE REGELN
 
 5. **Bild-Platzhalter niemals verändern
       – Bilder haben immer folgendes Schema und bleiben exakt so bestehen:
-      ../a images/image-26-Kalenderwoch-1.png
-      ../a images/image-26-Kalenderwoch-2.png
+         ../a images/image-26-Kalenderwoch-1.png
+         ../a images/image-26-Kalenderwoch-2.png
+         usw.
 
 6. **ÜBERSCHRIFTEN als <p> Tags mit font-size**:
    - H1 = <p style="margin:15px 0; font-size:21px;"><strong>Text</strong></p>
@@ -92,6 +93,8 @@ ABSOLUT VERBINDLICHE REGELN
 
 12. **Mehrere aufeinanderfolgende <p>-Tags dürfen NICHT aufgeteilt werden
       – Zwischen ihnen darf kein mj-text geschlossen und neu geöffnet werden.
+
+13. **Bilder oder Buttons, die vor, nach oder zwischen zusammengehörenden <p>-Tags stehen, dürfen die bestehende mj-columns- bzw. mj-section-Struktur NICHT unterbrechen. Verwende dafür ausschließlich die vorgesehenen MJML-Snippets.
 
 VERFÜGBARE MJML-TEMPLATES:
 

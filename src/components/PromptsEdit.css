@@ -40,3 +40,7 @@
     border-radius: 5px;
     color:black
 }
+
+.textAreaSnippet{
+    max-height: 200px;
+}
