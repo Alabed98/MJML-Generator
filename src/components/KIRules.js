@@ -182,12 +182,19 @@ function Rules(template = '', recievedLink = '') {
     - Ersetze KEINE Platzhalter in geschweiften Klammern {}`;
    
 
+      return getPrompt()
+}
 
-      /*let systemPrompt = '';
-      fetch('https://be-mailgenerator.vercel.app/api/prompt')
-      .then(res=>dataJson = res.json)
-      .then(data => systemPrompt = data) */
-      return systemPrompt
+async function getPrompt(){
+      try{
+      const res = await fetch('https://be-mjml-generator.vercel.app/api/prompt')
+      const data =await res.json()
+      console.log(data.prompt)
+      return data.prompt;
+      }
+      catch(e){
+            return e
+      }
 }
 
 export default Rules;
