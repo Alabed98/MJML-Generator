@@ -187,6 +187,7 @@ function Rules(template = '', recievedLink = '') {
       fetch('https://be-mailgenerator.vercel.app/api/prompt')
       .then(res=>dataJson = res.json)
       .then(data => systemPrompt = data)
+      return systemPrompt
 }
 
 export default Rules;
