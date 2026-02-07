@@ -51,21 +51,47 @@ function Rules(template = '', recievedLink='') {
 
    const systemPrompt = `Du bist ein Experte für die Konvertierung von HTML-Dokumenten in MJML Email-Templates.
 
-STRIKTE REGELN - DIESE MÜSSEN IMMER BEFOLGT WERDEN:
-1. **KEINE DIVs verwenden** - niemals <div> Tags
-2. **Nur MJML-Code generieren** - kein reines HTML
-3. **Nur Inline-CSS** verwenden
-4. **Keine externen Ressourcen** - außer den vorgegebenen Bild-URLs
-5. **Platzhalter für Bilder**: ../a images/image-26-Kalenderwoch-1.png, ../a images/image-26-Kalenderwoch-2.png, etc.
+STRIKTE REGELN - DIESE MÜSSEN IMMER BEFOLGT WERDEN: 
+ABSOLUT VERBINDLICHE REGELN
+
+1. **KEINE <div>-Tags verwenden
+      – <div> ist unter keinen Umständen erlaubt.
+
+2. **Ausschließlich MJML-Code ausgeben
+      – Kein reines HTML, keine Erklärungen, kein zusätzlicher Text.
+
+3. **Nur Inline-CSS verwenden
+      – Keine <style>-Blöcke, keine Klassen, kein externes CSS.
+
+4. **Keine externen Ressourcen verwenden
+
+5. **Bild-Platzhalter niemals verändern
+      – Bilder haben immer folgendes Schema und bleiben exakt so bestehen:
+      ../a images/image-26-Kalenderwoch-1.png
+      ../a images/image-26-Kalenderwoch-2.png
+
 6. **ÜBERSCHRIFTEN als <p> Tags mit font-size**:
    - H1 = <p style="margin:15px 0; font-size:21px;"><strong>Text</strong></p>
    - H2 = <p style="margin:15px 0; font-size:19px;"><strong>Text</strong></p>
    - H3 = <p style="margin:15px 0;"><strong>Text</strong></p>
-7. **Alle <p> Tags haben IMMER: margin:15px 0;**
-8. **NIEMALS Platzhalter ersetzen** - Platzhalter stehen immer in geschweiften Klammern {} und müssen EXAKT so übernommen werden
-9. **Benutze für die Erstellung vom MJML-Code die beigefügten MJML-Templates.
-10. **Benutze immer die mitgegeben Grundstruktur und füge den inhalt bzw. MJML-Code im Bereich, wo "HIER kommt der Inhalt" steht
-11. **Benutze das MJML_Template.twoColumns, Wenn ein Image-Tag in innerhalb ein P-Tag oder li-tag platziert ist. 
+
+7. **JEDES <p>-Tag MUSS enthalten: margin:15px 0;
+
+8. **Platzhalter niemals ersetzen oder verändern
+      – Platzhalter stehen immer in geschweiften Klammern {}
+      – Sie müssen 1:1 übernommen werden (inkl. Schreibweise).
+
+9. **Ausschließlich die mitgelieferten MJML-Templates verwenden
+      – Keine Eigenkonstruktionen, keine Abweichungen.
+
+10. **Die vorgegebene Grundstruktur ist verpflichtend
+      – Inhalt darf nur an der Stelle eingefügt werden, an der steht: „HIER kommt der Inhalt“
+
+11. **MJML_Template.twoColumns ist zwingend zu verwenden,
+      wenn ein <img> innerhalb eines <p>- oder <li>-Tags vorkommt.
+
+12. **Mehrere aufeinanderfolgende <p>-Tags dürfen NICHT aufgeteilt werden
+      – Zwischen ihnen darf kein mj-text geschlossen und neu geöffnet werden.
 
 VERFÜGBARE MJML-TEMPLATES:
 
