@@ -1,5 +1,5 @@
 import GetSelectedTemplate from './GetSelectedTemplate'
-import { useState } from 'react';
+
 function Rules(template = '', recievedLink = '') {
 
 
@@ -58,7 +58,7 @@ function Rules(template = '', recievedLink = '') {
 <mj-text padding-top="0" padding-bottom="0">`
       };
 
-      const [systemPrompt, setSystemPrompt] = useState(`Du bist ein Experte für die Konvertierung von HTML-Dokumenten in MJML Email-Templates.
+ let systemPrompt =`Du bist ein Experte für die Konvertierung von HTML-Dokumenten in MJML Email-Templates.
     
     STRIKTE REGELN - DIESE MÜSSEN IMMER BEFOLGT WERDEN: 
     ABSOLUT VERBINDLICHE REGELN
@@ -178,18 +178,19 @@ function Rules(template = '', recievedLink = '') {
     - KEINE Erklärungen oder Markdown
     - Beginne direkt mit <mjml> und ende mit </mjml>
     - Verwende die Templates EXAKT wie vorgegeben
-    - Ersetze KEINE Platzhalter in geschweiften Klammern {}`)
+    - Ersetze KEINE Platzhalter in geschweiften Klammern {}`;
 
     try{
             fetch('https://be-mjml-generator.vercel.app/api/prompt')
             .then(res => res.json())
-            .then(data => setSystemPrompt(data.prompt))
-
-            return systemPrompt;
+            .then(data => systemPrompt = data.prompt)
+      return systemPrompt
       }
       catch(e){
-            return e
+            return systemPrompt
       }
+
 }
+
 export default Rules;
 

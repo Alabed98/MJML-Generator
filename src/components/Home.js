@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './Home.css';
 import { HandleFileUpload, APIReq } from './fileUtils.js';
+import Rules from "./KIRules";
 
 
 
@@ -14,7 +15,7 @@ function Home() {
     const [btnText, setBtnText] = useState(<><i className={"fa-solid fa-arrows-rotate fa-xl"}></i> Word zu MJML konvertieren</>)
     const [showAlert, setShowAlert] = useState(false);
     const [selectedTemplate, setSelectedTemplate] = useState('Advance')
-   
+
 
     function Header() {
         return <>
@@ -197,7 +198,6 @@ function Home() {
         setFileName(wordFile.fileName);
         setWordOutput(wordFile.fileContentASWord)
         setHtmlOutput(wordFile.fileContentASHTML)
-
     }
 
 
