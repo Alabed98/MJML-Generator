@@ -2,8 +2,8 @@
 import Rules from "../KIRules";
 
 export async function Api(file, template, recievedLink) {
-  const apiKey = //process.env.REACT_APP_GEMINI_KEY;
-  'AIzaSyA4p_0t8djx7p39rwpm7XU6o9G6Lc2WWqI'
+  const apiKey = process.env.REACT_APP_GEMINI_KEY;
+  //'AIzaSyA4p_0t8djx7p39rwpm7XU6o9G6Lc2WWqI'
 
   if (template === 'Advance' || template === 'HU_Mailings') {
     recievedLink = '{landingpageUrl}'

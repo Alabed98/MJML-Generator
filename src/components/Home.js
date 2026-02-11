@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import './Home.css';
 import { HandleFileUpload, APIReq } from './fileUtils.js';
-import Rules from "./KIRules";
 
 
 
